@@ -55,7 +55,7 @@
             <h1>Lista de clientes</h1>
                 <thead style="background-color: #DFD7BF; color: #141E27;">
                     <tr>
-                        <th>Rut</th>
+                        <th>Rutsddsa</th>
                         <th>Nombre</th>
                         <th>Acciones</th>
                     </tr>

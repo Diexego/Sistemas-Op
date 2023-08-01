@@ -39,6 +39,12 @@ if($accion){
       $consulta=$conexionBD->prepare($sql);
       $consulta->bindParam(':rut_cliente',$rut_cliente);
       $consulta->execute();
+
+      $sqlCuenta = "DELETE FROM cuenta WHERE rut_cuenta=:rut_cliente";
+      $consultaCuenta = $conexionBD->prepare($sqlCuenta);
+      $consultaCuenta->bindParam(':rut_cliente', $rut_cliente);
+      $consultaCuenta->execute();
+    
     break;
     case "Seleccionar":
       $sql= "SELECT * FROM cliente WHERE rut_cliente=:rut_cliente";
@@ -46,7 +52,6 @@ if($accion){
       $consulta->bindParam(':rut_cliente',$rut_cliente);
       $consulta->execute();
       $cliente=$consulta->fetch(PDO::FETCH_ASSOC);
-      print_r($cliente);
       $nombre_cliente=$cliente["nombre_cliente"];
 
     break;
